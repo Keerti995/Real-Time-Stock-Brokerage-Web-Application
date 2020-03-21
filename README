@@ -1,0 +1,72 @@
+CS 6314.502 Web Programming Language: Project README
+
+Getting Started
+These instructions will get you a copy of the project up and running on your local machine.
+
+Prerequisites:
+
+Install PostgreSQL Database:
+
+Download postgreSQL from https://www.postgresql.org/download/windows/
+Double click on the installer file, an installation wizard will appear and guide you through multiple steps where you can choose different options that you would like to have in PostgreSQL.
+Start the postgreSQL server and create a database.
+Run following query to create the table:
+CREATE TABLE public.stock_list
+(
+    symbol varchar NOT NULL,
+    company_name varchar,
+    stock_type varchar,
+    region varchar,
+    market_open numeric,
+    marker_close numeric,
+    time_zone varchar,
+    currency varchar,
+    match_score numeric,
+    CONSTRAINT stock_list_pkey PRIMARY KEY (symbol)
+);
+
+Load the data given in the csv file to the table stock_list
+
+Install Apache Kafka:
+
+Download kafka binaries from https://kafka.apache.org/downloads
+Update data directory path in zookeeper.properties to required location.
+Update log directory path in server.properties of kafka to required location.
+Start zookeeper with the command
+zookeeper-server-start.bat <path of zookeeper.properties>
+Start kafka server with the command
+kafka-server-start.bat <path of server.properties>
+
+Install Redis:
+
+Download redis from https://redis.io/download
+Unzip the downloaded file and run the application to start redis server
+
+Install NodeJS:
+
+Download NodeJS from https://nodejs.org/en/download/
+Extract the zip file open application file to install NodeJS
+
+Starting Web Servers and Stock Brokerage Application:
+
+Download and extract the source code.
+Open the application.properties file under wpl/main/resources/
+Update the properties with database name, username and password.
+Update the log file location
+
+Run the Application.java file which is under WPL/wpl/src/main/java/project/wpl/
+
+Open new terminal and start the stock exchange server by running the Application.java file which
+is present in the location WPL/StockSimulator/stock.simulator/src/main/java/project/stock/simulator/
+
+Starting Website:
+
+Open a new terminal and navigate to the below location from the downloaded location
+WPL/FrontEnd Designs/Website/
+Start NodeJS server with command: http-server
+Open the browser and start accessing the website with the URL: localhost:8080
+
+
+
+ 	
+
